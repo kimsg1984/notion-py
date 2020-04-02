@@ -464,6 +464,12 @@ class BasicBlock(Block):
         markdown=False,
     )
     color = field_map("format.block_color")
+    content = property_map(
+        "title",
+        python_to_api=lambda x: x,
+        api_to_python=lambda x: x,
+        markdown=False,
+    )
 
     def convert_to_type(self, new_type):
         """
